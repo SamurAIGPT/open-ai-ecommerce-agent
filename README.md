@@ -4,6 +4,15 @@ An AI agent for e-commerce and CRO — Amazon review mining, marketplace intelli
 
 Part of [Agency Agents OS](https://github.com/Anil-matcha/agency-agents-os), an open ecosystem of specialized AI agents for real business work.
 
+## Related Projects
+
+- [Agency Agents OS](https://github.com/Anil-matcha/agency-agents-os) — the central catalog this repo is part of.
+- [ai-seo-agent](https://github.com/SamurAIGPT/ai-seo-agent) — its live local-SEO endpoints (`seo.business_listings`, `seo.business_profile`, `seo.local_serp`) overlap with this repo's local-business-leads sub-agent.
+- [ai-competitor-intelligence-agent](https://github.com/SamurAIGPT/ai-competitor-intelligence-agent) — cross-cuts this repo's marketplace intelligence with ads and social data.
+- [ai-reputation-agent](https://github.com/SamurAIGPT/ai-reputation-agent) — shares this repo's Amazon/Google review-data needs.
+- [MuAPI MCP docs](https://muapi.ai/docs/mcp) — connect this repo's `SKILL.md` files via MCP.
+- [MuAPI access keys](https://muapi.ai/access-keys) — create the API key this agent needs.
+
 ## What this covers
 
 This repo is the umbrella for anything an agency or in-house team would call "the AI e-commerce agent": mining customer reviews for product and CRO decisions, sizing up marketplace competitors, qualifying local business leads, and scoping what a store needs before entering a new country.
