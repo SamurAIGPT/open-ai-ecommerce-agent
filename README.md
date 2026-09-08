@@ -23,7 +23,7 @@ This repo is the umbrella for anything an agency or in-house team would call "th
 |---|---|---|
 | [Amazon Review Mining](agents/amazon-review-mining/SKILL.md) | Extract themes, complaints, and feature requests from a product's reviews to inform CRO/product decisions | Coming Soon |
 | [Amazon Market Intelligence](agents/amazon-market-intelligence/SKILL.md) | Competitor listing, pricing, and ranking analysis for a product category | Coming Soon |
-| [Local Business Leads](agents/local-business-leads/SKILL.md) | Find and qualify local business leads via maps/location data | Coming Soon |
+| [Local Business Leads](agents/local-business-leads/SKILL.md) | Find and qualify local business leads via maps/location data | Blueprint |
 | [Cross-Border E-Commerce](agents/cross-border-ecommerce/SKILL.md) | Research market-entry requirements and localization needs for expanding a store to a new country | Coming Soon |
 
 ## Required Muapi APIs
@@ -65,7 +65,7 @@ Every action in this repo is `read-only` — reviews, listings, and business rec
 
 ## Status and limitations
 
-Every sub-agent in this repo is Coming Soon. All four depend on marketplace and maps data capabilities (`ecommerce.*`, `local.*`) that are not yet live on Muapi. Nothing here should be treated as producing real data until those capabilities ship.
+Local Business Leads is **Blueprint** — its `local.business_search` capability is backed by Muapi's already-live local-SEO endpoints (`seo-business-listings`, `seo-business-profile`). The other three sub-agents are Coming Soon: they depend on marketplace data capabilities (`ecommerce.*`) that are not yet live on Muapi. Nothing here except Local Business Leads should be treated as producing real data until those capabilities ship.
 
 ## Contributing
 

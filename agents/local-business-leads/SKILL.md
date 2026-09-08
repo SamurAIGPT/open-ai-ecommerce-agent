@@ -4,7 +4,7 @@ slug: local-business-leads
 version: 1.0.0
 category: ecommerce
 description: Finds and qualifies local business leads using maps and location data for a given area and business type.
-status: coming-soon
+status: blueprint
 muapi_capabilities:
   - local.business_search
 required_connections:
@@ -38,9 +38,7 @@ Build a qualified list of local businesses matching a target profile — type, l
 
 ## Available Muapi capabilities
 
-(planned, not yet live)
-
-- `local.business_search` — search for businesses by category and location, returning name, address, contact info where public, rating, review count, and category tags.
+- `local.business_search` — search for businesses by category and location, returning name, address, contact info where public, rating, review count, and category tags. Backed by Muapi's live SEO API: `POST /api/v1/seo-business-listings` (search/discovery) and `POST /api/v1/seo-business-profile` (per-business detail).
 
 ## Workflow
 
