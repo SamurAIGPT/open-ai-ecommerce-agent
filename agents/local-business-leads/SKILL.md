@@ -38,7 +38,7 @@ Build a qualified list of local businesses matching a target profile — type, l
 
 ## Available Muapi capabilities
 
-- `local.business_search` — search for businesses by category and location, returning name, address, contact info where public, rating, review count, and category tags. Backed by Muapi's live SEO API: `POST /api/v1/seo-business-listings` (search/discovery) and `POST /api/v1/seo-business-profile` (per-business detail).
+- `local.business_search` — search for businesses by category and location, returning name, address, contact info where public, rating, review count, and category tags. Backed by Muapi's live SEO API: `POST /api/v1/seo-business-listings` (search/discovery) and `POST /api/v1/seo-business-profile` (per-business detail) — both live and confirmed reachable 2026-09-09. **Real limitation found in testing:** `seo-business-listings`' `location` field only accepts a country name (e.g. "United States"), not a city/neighborhood/radius — there is no dedicated city-level geo filter. Folding a city into the free-text `keyword` (e.g. "coffee shop in Austin Texas") returned zero results in testing rather than a city-scoped result set. Until a real city-level parameter exists, treat this agent as scoped to country-level category search, and say so explicitly rather than implying true city/neighborhood targeting.
 
 ## Workflow
 
@@ -71,12 +71,12 @@ Build a qualified list of local businesses matching a target profile — type, l
 
 ## Failure and missing-data behavior
 
-`local.business_search` is not yet live on Muapi. Until it ships, this agent cannot pull real business or location data. When invoked today, it must say so plainly — state that the capability is Coming Soon and explain what it will do once available — rather than inventing business names or details. If the user supplies their own list (e.g. an export from another tool), the agent may organize and qualify that list directly and should say clearly that it's working from user-supplied data, not a live Muapi pull.
+`local.business_search` is live. Because the underlying API only filters by country, not city/neighborhood, a request scoped to a specific city must say so plainly ("this pulls country-level results filtered by keyword, not a true city-level search") rather than implying precise geographic scoping it can't deliver. If the user supplies their own list (e.g. an export from another tool), the agent may organize and qualify that list directly and should say clearly that it's working from user-supplied data, not a live Muapi pull.
 
 ## Example interactions
 
 **User:** "Find me 50 independent gyms in Austin with under 4.0 rating — they're the ones who need our marketing help."
-**Agent (today):** "Local Business Leads isn't live yet — it depends on `local.business_search`, which hasn't shipped on Muapi. Once it's available, I'll pull independent gyms in Austin, filter to under a 4.0 rating, and hand you a qualified list with contact info where public. If you already have a list exported from somewhere else, I can qualify and organize that now."
+**Agent:** "I'll search for independent gyms with 'Austin' in the query, but note that `local.business_search` currently filters by country (United States) rather than city — results may include non-Austin matches that mention Austin in their name/description, so I'll flag any that aren't clearly Austin-based. Filtering to under a 4.0 rating and returning contact info where public."
 
 **User:** "Compare boutique coffee shop density across these three neighborhoods."
-**Agent (once live):** "As of [timestamp]: Neighborhood A has 14 independent coffee shops (avg. 4.3 rating), Neighborhood B has 6 (avg. 4.6), Neighborhood C has 22 (avg. 3.9). Full list with addresses and ratings attached."
+**Agent:** "As of [timestamp]: found 14 independent coffee shops matching 'coffee shop' + neighborhood name in the query (avg. 4.3 rating) — note these are country-level results filtered by keyword match, not a verified neighborhood-bounded set, since the API has no city/neighborhood geo filter. Full list with addresses and ratings attached, flagged for manual neighborhood verification."
