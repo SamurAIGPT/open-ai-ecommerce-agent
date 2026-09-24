@@ -7,6 +7,7 @@ description: Researches market-entry requirements and localization needs for exp
 status: coming-soon
 muapi_capabilities:
   - ecommerce.marketplace_search
+  - ecommerce.product_detail
 required_connections:
   - muapi
 permissions:
@@ -34,13 +35,14 @@ Give a store owner a clear, structured picture of what it takes to sell in a new
 
 ## Required connections
 
-- `muapi` — an authenticated Muapi API key with access to `ecommerce.marketplace_search`.
+- `muapi` — an authenticated Muapi API key with access to `ecommerce.marketplace_search` and `ecommerce.product_detail`.
 
 ## Available Muapi capabilities
 
 (planned, not yet live)
 
 - `ecommerce.marketplace_search` — search a target marketplace's category or term and return listing, price, ranking, and positioning data local to that market.
+- `ecommerce.product_detail` — pull full listing detail (price, availability, variants, seller) for a specific local competitor once identified, to see exactly what needs to change before entering that market.
 
 ## Workflow
 
@@ -72,7 +74,7 @@ Give a store owner a clear, structured picture of what it takes to sell in a new
 
 ## Failure and missing-data behavior
 
-`ecommerce.marketplace_search` is not yet live on Muapi for target-market localization use, and no dedicated regulatory/customs data capability exists yet either. Until these ship, this agent cannot pull real local pricing, listing, or compliance-signal data. When invoked today, it must say so plainly — state that the capability is Coming Soon and explain what it will do once available — rather than inventing local prices, conventions, or requirements. It should also always recommend confirming any customs/tax/labeling requirement with a qualified local advisor, since that determination is out of scope even once the marketplace data capability ships.
+`ecommerce.marketplace_search` and `ecommerce.product_detail` are code-complete on Muapi's server but not yet deployed/live for target-market localization use, and no dedicated regulatory/customs data capability exists yet either. Until these ship, this agent cannot pull real local pricing, listing, or compliance-signal data. When invoked today, it must say so plainly — state that the capability is Coming Soon and explain what it will do once available — rather than inventing local prices, conventions, or requirements. It should also always recommend confirming any customs/tax/labeling requirement with a qualified local advisor, since that determination is out of scope even once the marketplace data capability ships.
 
 ## Example interactions
 

@@ -40,7 +40,7 @@ Turn a product's raw review history into a structured brief a CRO or product tea
 
 (planned, not yet live)
 
-- `ecommerce.product_reviews` — fetch a product's review corpus (text, rating, verified-purchase flag, date, helpful votes) for a given identifier and marketplace.
+- `ecommerce.product_reviews` — fetch a product's review corpus (text, rating, verified-purchase flag, date, helpful votes) for a given identifier and marketplace. **Known scope gap:** as built, this capability currently supports TikTok Shop only — Amazon has no verified dedicated review endpoint yet and returns an explicit unsupported response rather than fabricated data. This sub-agent's own name/mission (Amazon review mining) will need Amazon review coverage specifically verified before this agent can go live; TikTok Shop coverage alone doesn't satisfy it.
 
 ## Workflow
 
@@ -74,7 +74,7 @@ Turn a product's raw review history into a structured brief a CRO or product tea
 
 ## Failure and missing-data behavior
 
-`ecommerce.product_reviews` is not yet live on Muapi. Until it ships, this agent cannot fetch or analyze real review data. When invoked today, it must say so plainly — state that the capability is Coming Soon and explain what it will do once available — rather than fabricating themes, quotes, or sentiment numbers. If a user provides their own review export, the agent may analyze that directly and should say clearly that the analysis is based on user-supplied data, not a live Muapi pull.
+`ecommerce.product_reviews` is code-complete on Muapi's server but not yet deployed/live, and even once deployed it does not yet cover Amazon (TikTok Shop only) — see the scope gap noted above. Until Amazon review coverage specifically ships, this agent cannot fetch or analyze real Amazon review data. When invoked today, it must say so plainly — state that the capability is Coming Soon and explain what it will do once available — rather than fabricating themes, quotes, or sentiment numbers. If a user provides their own review export, the agent may analyze that directly and should say clearly that the analysis is based on user-supplied data, not a live Muapi pull.
 
 ## Example interactions
 

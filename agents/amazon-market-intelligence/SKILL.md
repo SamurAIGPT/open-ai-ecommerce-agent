@@ -7,6 +7,8 @@ description: Analyzes competitor listings, pricing, and rankings for a product c
 status: coming-soon
 muapi_capabilities:
   - ecommerce.marketplace_search
+  - ecommerce.product_detail
+  - ecommerce.keyword_metrics
 required_connections:
   - muapi
 permissions:
@@ -34,13 +36,15 @@ Give a seller or brand a clear picture of who they're competing against in a cat
 
 ## Required connections
 
-- `muapi` — an authenticated Muapi API key with access to `ecommerce.marketplace_search`.
+- `muapi` — an authenticated Muapi API key with access to `ecommerce.marketplace_search`, `ecommerce.product_detail`, and `ecommerce.keyword_metrics`.
 
 ## Available Muapi capabilities
 
 (planned, not yet live)
 
 - `ecommerce.marketplace_search` — search a marketplace category or term and return listing, price, ranking, and rating data for the matching products.
+- `ecommerce.product_detail` — pull full listing detail (price, availability, rating, variants, seller) for a specific competitor ASIN/product ID once it's identified from search.
+- `ecommerce.keyword_metrics` — Amazon-native keyword search-volume context for the category, to weigh which claims/keywords are worth competing on, not just who currently ranks.
 
 ## Workflow
 
@@ -73,7 +77,7 @@ Give a seller or brand a clear picture of who they're competing against in a cat
 
 ## Failure and missing-data behavior
 
-`ecommerce.marketplace_search` is not yet live on Muapi. Until it ships, this agent cannot pull real listing, pricing, or ranking data. When invoked today, it must say so plainly — state that the capability is Coming Soon and explain what it will do once available — rather than inventing competitor names, prices, or rankings. If the user supplies their own competitor data (e.g. a spreadsheet), the agent may analyze that directly and should say clearly that the analysis is based on user-supplied data, not a live Muapi pull.
+`ecommerce.marketplace_search`, `ecommerce.product_detail`, and `ecommerce.keyword_metrics` are code-complete on Muapi's server but not yet deployed/live. Until they ship, this agent cannot pull real listing, pricing, ranking, or keyword-demand data. When invoked today, it must say so plainly — state that the capability is Coming Soon and explain what it will do once available — rather than inventing competitor names, prices, or rankings. If the user supplies their own competitor data (e.g. a spreadsheet), the agent may analyze that directly and should say clearly that the analysis is based on user-supplied data, not a live Muapi pull.
 
 ## Example interactions
 

@@ -28,9 +28,13 @@ This repo is the umbrella for anything an agency or in-house team would call "th
 
 ## Required Muapi APIs
 
-- `ecommerce.product_reviews` — pull and structure a product's review history for theme/complaint/feature-request mining.
+- `ecommerce.product_reviews` — pull and structure a product's review history for theme/complaint/feature-request mining. Currently TikTok Shop only (no verified Amazon review endpoint yet), so `amazon-review-mining` specifically still needs Amazon coverage before it can go live.
 - `ecommerce.marketplace_search` — competitor listing, pricing, and ranking data for a product category.
+- `ecommerce.product_detail` — full listing detail (price, availability, rating, variants, seller) for a specific competitor product.
+- `ecommerce.keyword_metrics` — Amazon-native keyword search-volume context for category/positioning research.
 - `local.business_search` — maps/location-based business discovery and qualification data.
+
+All four `ecommerce.*` capabilities are code-complete on Muapi's server as of 2026-09-24 but not yet deployed/live — sub-agent statuses below stay Coming Soon until they ship.
 
 See each sub-agent's `SKILL.md` for the specific capabilities it uses.
 
