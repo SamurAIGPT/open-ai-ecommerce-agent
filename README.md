@@ -2,11 +2,11 @@
 
 An AI agent for e-commerce and CRO — Amazon review mining, marketplace intelligence, local business leads, and cross-border expansion research — backed by real marketplace and maps APIs.
 
-Part of [Agency Agents OS](https://github.com/Anil-matcha/agency-agents-os), an open ecosystem of specialized AI agents for real business work.
+Part of [Open Business Agents](https://github.com/Anil-matcha/open-business-agents), an open ecosystem of specialized AI agents for real business work.
 
 ## Related Projects
 
-- [Agency Agents OS](https://github.com/Anil-matcha/agency-agents-os) — the central catalog this repo is part of.
+- [Open Business Agents](https://github.com/Anil-matcha/open-business-agents) — the central catalog this repo is part of.
 - [ai-seo-agent](https://github.com/SamurAIGPT/ai-seo-agent) — its live local-SEO endpoints (`seo.business_listings`, `seo.business_profile`, `seo.local_serp`) overlap with this repo's local-business-leads sub-agent.
 - [ai-competitor-intelligence-agent](https://github.com/SamurAIGPT/ai-competitor-intelligence-agent) — cross-cuts this repo's marketplace intelligence with ads and social data.
 - [ai-reputation-agent](https://github.com/SamurAIGPT/ai-reputation-agent) — shares this repo's Amazon/Google review-data needs.
@@ -71,9 +71,13 @@ Every action in this repo is `read-only` — reviews, listings, and business rec
 
 Local Business Leads is **Blueprint** — its `local.business_search` capability is backed by Muapi's already-live local-SEO endpoints (`seo-business-listings`, `seo-business-profile`). The other three sub-agents are Coming Soon: they depend on marketplace data capabilities (`ecommerce.*`) that are not yet live on Muapi. Nothing here except Local Business Leads should be treated as producing real data until those capabilities ship.
 
+## Guides
+
+- [Qualify a local market lead list](guides/qualify-a-local-market-lead-list.md) — use live country-level search while marking city-level verification gaps.
+
 ## Contributing
 
-See [Agency Agents OS CONTRIBUTING.md](https://github.com/Anil-matcha/agency-agents-os/blob/main/CONTRIBUTING.md).
+See [Open Business Agents CONTRIBUTING.md](https://github.com/Anil-matcha/open-business-agents/blob/main/CONTRIBUTING.md).
 
 ## License
 
